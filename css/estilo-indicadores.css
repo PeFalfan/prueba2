@@ -1,0 +1,19 @@
+.conteiner{
+    width: 80%;
+    margin: auto;
+}
+.regresar{
+    float: right;
+    margin-left: -200px;
+    margin-top: -10px;
+    margin-bottom: 30px;
+}
+.ind{
+    margin-top: 30px;
+    margin-bottom: 30px;    
+}
+.temp{
+    width: 40%;
+    margin-top: 20px;
+    margin-left: 50%;
+}
