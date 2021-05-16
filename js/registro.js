@@ -13,6 +13,7 @@ function fn_ocultarErrores() {
     $('#lbl_correo').hide();
     $('#lbl_tipo_cuenta').hide();
     $('#lbl_error_servicio').hide();
+    $('#lbl_error_largo_rut').hide();
 
 }
 
@@ -46,6 +47,9 @@ function fn_limpiarFormulario() {
     $('#lbl_error_servicio').removeClass('is-invalid');
     $('#lbl_error_servicio').removeClass('is-valid');
 
+    $('#lbl_error_largo_rut').removeClass('is-invalid');
+    $('#lbl_error_largo_rut').removeClass('is-valid');
+
 }
 
 /* Bloque de Validaciones :
@@ -71,8 +75,15 @@ function fn_validaCamposVacios() {
         $('#txt_rut').addClass('is-invalid');
         $('#lbl_error_servicio').hide();
 
-    } else {
+    } else if(rut.length < 8){
 
+        $('#lbl_rut_no_ingresado').hide();
+        $('#lbl_error_largo_rut').show();
+        $('#txt_rut').addClass('is-invalid');
+
+    }else {
+
+        $('#lbl_error_largo_rut').hide();
         $('#lbl_error_servicio').hide();
         $('#lbl_rut_no_ingresado').hide();
 
@@ -89,14 +100,12 @@ function fn_validaCamposVacios() {
                 $('#txt_rut').removeClass('is-invalid');
                 $('#txt_rut').addClass('is-valid');
 
-            } else if(!response.data.valid){
+            } else {
 
+                $('#lbl_rut_no_ingresado').hide();
                 $('#lbl_rut').show();
                 $('#txt_rut').addClass('is-invalid');
 
-            }else{
-
-                console.log(response.status);
             }
 
         }).fail(function(){
