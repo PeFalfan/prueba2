@@ -65,7 +65,8 @@ function fn_validaCamposVacios() {
     var apePat = $('#txt_ape_pat').val();
     var apeMat = $('#txt_ape_mat').val();
     var correo = $('#txt_correo').val();
-    
+    var seleccionado = $('#cmb_tipo_cuenta option:selected').val();
+
 
     $('#lbl_error_servicio').removeClass('is-invalid');
     $('#lbl_error_servicio').removeClass('is-valid');
@@ -76,13 +77,13 @@ function fn_validaCamposVacios() {
         $('#txt_rut').addClass('is-invalid');
         $('#lbl_error_servicio').hide();
 
-    } else if(rut.length < 8){
+    } else if (rut.length < 8) {
 
         $('#lbl_rut_no_ingresado').hide();
         $('#lbl_error_largo_rut').show();
         $('#txt_rut').addClass('is-invalid');
 
-    }else {
+    } else {
 
         $('#lbl_error_largo_rut').hide();
         $('#lbl_error_servicio').hide();
@@ -109,7 +110,7 @@ function fn_validaCamposVacios() {
 
             }
 
-        }).fail(function(){
+        }).fail(function () {
             $('#lbl_rut_no_ingresado').hide();
             $('#lbl_error_servicio').show();
             $('#txt_rut').addClass('is-invalid');
@@ -136,6 +137,7 @@ function fn_validaCamposVacios() {
         $('#txt_ape_pat').removeClass('is-invalid');
         $('#txt_ape_pat').addClass('is-valid');
     }
+    
     //APELLIDO MATERNO
     if (apeMat.length === 0 || apeMat === " ") {
         $('#lbl_ape_mat').show();
@@ -145,6 +147,7 @@ function fn_validaCamposVacios() {
         $('#txt_ape_mat').removeClass('is-invalid');
         $('#txt_ape_mat').addClass('is-valid');
     }
+
     //CORREO
     if (correo.length === 0 || correo === " ") {
         $('#lbl_correo').show();
@@ -156,5 +159,14 @@ function fn_validaCamposVacios() {
     }
 
     //TIPO DE CUENTA
-    
+    if (seleccionado == 1) {
+
+        $('#lbl_tipo_cuenta').show();
+        $('#cmb_tipo_cuenta').addClass('is-invalid');
+
+    } else {
+
+        $('#cmb_tipo_cuenta').removeClass('is-invalid');
+        $('#cmb_tipo_cuenta').addClass('is-valid');
+    }
 }
