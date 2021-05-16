@@ -65,6 +65,7 @@ function fn_validaCamposVacios() {
     var apePat = $('#txt_ape_pat').val();
     var apeMat = $('#txt_ape_mat').val();
     var correo = $('#txt_correo').val();
+    
 
     $('#lbl_error_servicio').removeClass('is-invalid');
     $('#lbl_error_servicio').removeClass('is-valid');
@@ -153,4 +154,7 @@ function fn_validaCamposVacios() {
         $('#txt_correo').removeClass('is-invalid');
         $('#txt_correo').addClass('is-valid');
     }
+
+    //TIPO DE CUENTA
+    
 }
