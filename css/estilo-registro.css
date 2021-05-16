@@ -1,11 +1,12 @@
-/*body{
+body{
     background-image: url(/img/registro_img.jpg);
     background-size: 100vw 100vh;
     background-attachment: fixed;
     margin: 0;
-    font-family: monospace;
+    font: bold;
+    font-size: larger;
 }
-*/
+
 form{
     width: 600px;
     margin: auto;
