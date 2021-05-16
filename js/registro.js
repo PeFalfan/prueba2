@@ -168,5 +168,6 @@ function fn_validaCamposVacios() {
 
         $('#cmb_tipo_cuenta').removeClass('is-invalid');
         $('#cmb_tipo_cuenta').addClass('is-valid');
+        $('#lbl_tipo_cuenta').hide();
     }
 }
